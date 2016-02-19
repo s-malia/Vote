@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Primaries</title>
+		<style>
+			#map{
+				width:600px;
+				height:400px;
+			}
+			body{
+				background-image: url("http://www.ohea.org/OEA/images/campaign2012/background.jpg");
+				color: black;
+			}
+			a{
+				color: black;
+			}
+
+		</style>
+		<script src = "https://maps.googleapis.com/maps/api/js"></script>
+		<script>
+			function initialize() {
+				var mapCanvas = document.getElementById('map');
+				var center = {lat: 39.50, lng: -98.35};
+				var position2 = {lat: 37.2970155,lng: -121.8174109};
+				var mapOptions = {
+					center: center,
+					zoom: 4,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				}
+
+				var map = new google.maps.Map(mapCanvas, mapOptions);
+
+				//var map = new google.maps.Map(mapCanvas, mapOptions);
+
+				var marker = new google.maps.Marker({
+					position: center,
+					map: map
+				});
+
+				var marker2 = new google.maps.Marker({
+					position: position2,
+					map: map
+				});
+				var califMarker = new google.maps.Marker({
+					position: {lat: 38.5614566,lng: -121.583345},
+					map: map
+				});
+				var oregonMarker = new google.maps.Marker({
+					position: {lat: 43.3460259,lng: -122.666226},
+					map: map
+				});
+				var washMarker = new google.maps.Marker({
+					position: {lat: 46.5940394,lng: -120.6183025},
+					map:map
+				});
+				var arizonaMarker = new google.maps.Marker({
+					position: {lat:33.6041448,lng: -112.686959},
+					map: map
+				});
+				var utahMarker = new google.maps.Marker({
+					position: {lat:40.7765228,lng:-112.0609172},
+					map: map
+				});
+
+				var idahoMarker = new google.maps.Marker({
+					position: {lat: 43.6007201,lng: -116.3743295},
+					map: map
+				});
+
+				var montanaMarker = new google.maps.Marker({
+					position: {lat: 46.5933365,lng: -112.0859064},
+					map: map
+				});
+
+				var wyomingMarker = new google.maps.Marker({
+					position: {lat: 42.1474472,lng:-105.9078366},
+					map: map
+				});
+				var coloradoMarker = new google.maps.Marker({
+					position: {lat:39.7640004,lng:-105.1360025},
+					map:map
+				});
+				var newMexicoMarker = new google.maps.Marker({
+					position: {lat:35.082086,lng:-106.9573743},
+					map:map
+				});
+				var texasMarker = new google.maps.Marker({
+					position: {lat:30.3074609,lng:-98.0342996 },
+					map:map
+				});
+				var oklahomaMarker = new google.maps.Marker({
+					position: {lat:35.4823225,lng:-97.760092},
+					map:map
+				});
+
+				var kansasMarker = new google.maps.Marker({
+					position: {lat:38.0129703,lng:-97.8484635},
+					map:map
+				});
+				var nebraskaMarker = new google.maps.Marker({
+					position: {lat:41.2915176,lng:-99.3621384},
+					map:map
+				});
+				var southDakotaMarker = new google.maps.Marker({
+					position: {lat:43.3185729,lng:-99.7843158},
+					map:map
+				});
+				var northDakotaMarker = new google.maps.Marker({
+					position: {lat:46.8921783,lng:-99.8035894},
+					map:map
+				});
+				var minnesotaMarker = new google.maps.Marker({
+					position: {lat:44.970611,lng:-93.4022847},
+					map:map
+				});
+
+
+  				var contentString = '<div id="content">'+
+      				'<p> Test </p>';
+
+      			var contentString2 = '<div id = "contentTwo">' +
+      				'<p> This is the info for info window number two </p>'
+      				+ '</div>';
+
+      			var califContentStr = '<div id = "califContentStr">' + '<h1> California </h1>' +
+      				'<p> Primaries: June 7th, 2016 </p>' +
+      				'</div>';
+
+      			var oregonContentStr = '<div id = "oregonContentStr">' + '<h1>Oregon</h1' +
+      			'<p> Primaries: May 17th, 2016 </p> ' +
+      			'</div>';
+
+      			var washContentStr = '<div id = "washContentStr">' +
+      			'<h1> Washington </h1>' + '<p> Primaries: May 24th, 2016 </p> ' +
+      			'</div>';
+
+      			var arizonaContentStr = '<div id = "arizonaContentStr">' +
+      			'<h1> Arizona </h1> ' + '<p> Primaries: March 22nd , 2016</p> ' +
+      			'</div>';
+
+      			var utahContentStr = '<div id = "utahContentStr">' +
+      			'<h1> Utah </h1>' + ' <p> Primaries: March 22nd, 2016  </p> ' +
+      			'</div>';
+
+      			var idahoContentStr = '<div id = "idahoContentStr">' +
+      			'<h1> Idaho </h1>' + '<p> Primaries: March 8th, 2016 </p> ' +
+      			'</div>';
+
+      			var montanaContentStr = '<div id = "montanaContentStr">' +
+      			'<h1> Montana </h1>' + '<p> Primaries: June 7th, 2016 </p> ' +
+      			'</div>';
+
+      			var wyomingContentStr = '<div id = "wyomingContentStr">' +
+      			'<h1> Wyoming </h1>' + '<p> Primaries: March 1st, 2016 </p>' +
+      			'</div>';
+
+      			var coloradoContentStr = '<div id = "coloradoContentStr">' +
+      			'<h1> Colorado </h1>' + '<p> Primaries: March 1st, 2016 </p> ' +
+      			'</div>';
+
+      			var newMexicoContentStr = '<div id = "newMexicoContentStr">' +
+      			'<h1> New Mexico </h1> ' + '<p> Primaries: June 7th, 2016 </p> ' +
+      			'</div>';
+      			var texasContentStr = '<div id = "texasContentStr">' +
+      			'<h1> Texas </h1>' + '<p> March 1st, 2016 </p> ' +
+      			'</div>';
+
+      			var oklahomaContentStr = '<div id = "oklahomaContentStr">' +
+      			+ '<h1> Oklahoma </h1>' + '<p> Primaries: March 1st, 2016 </p> ' +
+      			'</div>';
+
+      			var kansasContentStr = '<div id = "kansasContentStr">' +
+      			'<h1> Kansas </h1>' + '<p> Primaries: March 5th, 2016 </p> ' +
+      			'</div>';
+
+      			var nebraskaContentStr = '<div id = "nebraskaContentStr">' +
+      			'<h1> Nebraska </h1>' + '<p> Primaries: March 5th, 2016 </p> ' +
+      			'</div>';
+
+      			var southDakotaContentStr = '<div id = "southDakotaContentStr">' +
+      			'<h1> South Dakota </h1>' + '<p> Primares: June 7th, 2016 </p> ' +
+      			'</div>';
+      			var northDakotaContentStr = '<div id = "northDakotaContentStr">' +
+      			'<h1> North Dakota </h1>' + '<p> Primaries: June 7th, 2016 </p> ' +
+      			'</div>';
+      			var minnesotaContentStr = '<div id = "minnesotaContentStr">' +
+      			'<h1> Minnesota </h1>' + '<p> Primaries: March 1st, 2016 </p> ' +
+      			'</div>';
+
+
+				var infoWindow1 = new google.maps.InfoWindow({
+					content: contentString
+				});
+
+				var infoWindow2 = new google.maps.InfoWindow({
+					content: contentString2
+				});
+				var califInfoWindow = new google.maps.InfoWindow({
+					content: califContentStr
+				});
+
+				var oregonInfoWindow = new google.maps.InfoWindow({
+					content:oregonContentStr
+				});
+				var washInfoWindow = new google.maps.InfoWindow({
+					content:washContentStr
+				});
+				var arizonaInfoWindow = new google.maps.InfoWindow({
+					content:washContentStr
+				});
+
+				var utahInfoWindow = new google.maps.InfoWindow({
+					content:utahContentStr
+				});
+
+				var IdahoInfoWindow = new google.maps.InfoWindow({
+					content:idahoContentStr
+				});
+
+				var montanaInfoWindow = new google.maps.InfoWindow({
+					content:montanaContentStr
+				});
+
+				var wyomingInfoWindow = new google.maps.InfoWindow({
+					content:wyomingContentStr
+				});
+
+				var coloradoInfoWindow = new google.maps.InfoWindow({
+					content:coloradoContentStr
+				});
+				var newMexicoInfoWindow = new google.maps.InfoWindow({
+					content:newMexicoContentStr
+				});
+				var texasInfoWindow = new google.maps.InfoWindow({
+					content:texasContentStr
+				});
+
+				var oklahomaInfoWindow = new google.maps.InfoWindow({
+					content:oklahomaContentStr
+				});
+
+				var kansasInfoWindow = new google.maps.InfoWindow({
+					content:kansasContentStr
+				});
+
+				var nebraskaInfoWindow = new google.maps.InfoWindow({
+					content:nebraskaContentStr
+				});
+				var southDakotaInfoWindow = new google.maps.InfoWindow({
+					content:southDakotaContentStr
+				});
+				var northDakotaInfoWindow = new google.maps.InfoWindow({
+					content:northDakotaContentStr
+				});
+				var minnesotaInfoWindow = new google.maps.InfoWindow({
+					content:minnesotaContentStr
+				});
+
+
+				marker.addListener('click', function() {
+					infoWindow1.open(map, marker);
+					map.setZoom(12);
+				});
+
+				marker2.addListener('click', function() {
+					infoWindow2.open(map, marker2);
+					map.setZoom(5);
+				});
+				califMarker.addListener('click',function() {
+					califInfoWindow.open(map,califMarker);
+					map.setZoom(5);
+				});
+				oregonMarker.addListener('click',function() {
+					oregonInfoWindow.open(map,oregonMarker);
+					map.setZoom(5);
+				});
+				washMarker.addListener('click',function() {
+					washInfoWindow.open(map,washMarker);
+					map.setZoom(5);
+				});
+				arizonaMarker.addListener('click',function() {
+					arizonaInfoWindow.open(map,arizonaMarker);
+					map.setZoom(5);
+				});
+				utahMarker.addListener('click',function() {
+					utahInfoWindow.open(map,utahMarker);
+					map.setZoom(5);
+				});
+				idahoMarker.addListener('click',function() {
+					idahoInfoWindow.open(map,idahoMarker);
+					map.setZoom(5);
+				});
+				montanaMarker.addListener('click',function() {
+					montanaInfoWindow.open(map, montanaMarker);
+					map.setZoom(5);
+				});
+				wyomingMarker.addListener('click',function() {
+					wyomingInfoWindow.open(map,wyomingMarker);
+					map.setZoom(5);
+				});
+
+				coloradoMarker.addListener('click',function() {
+					coloradoInfoWindow.open(map,coloradoMarker);
+					map.setZoom(5);
+				});
+				newMexicoMarker.addListener('click',function() {
+					newMexicoInfoWindow.open(map,newMexicoMarker);
+					map.setZoom(5);
+				});
+				texasMarker.addListener('click',function() {
+					texasInfoWindow.open(map,texasMarker);
+					map.setZoom(5);
+				});
+				oklahomaMarker.addListener('click',function() {
+					oklahomaInfoWindow.open(map,oklahomaMarker);
+					map.setZoom(5);
+				});
+				kansasMarker.addListener('click',function() {
+					kansasInfoWindow.open(map,kansasMarker);
+					map.setZoom(5);
+				});
+				nebraskaMarker.addListener('click',function() {
+					nebraskaInfoWindow.open(map,nebraskaMarker);
+					map.setZoom(5);
+				});
+				southDakotaMarker.addListener('click',function() {
+					southDakotaInfoWindow.open(map,southDakotaMarker);
+					map.setZoom(5);
+				});
+				northDakotaMarker.addListener('click',function() {
+					northDakotaInfoWindow.open(map,northDakotaMarker);
+					map.setZoom(5);
+				});
+				minnesotaMarker.addListener('click',function() {
+					minnesotaInfoWindow.open(map,minnesotaMarker);
+					map.setZoom(5);
+				});
+
+
+			}
+
+
+
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+	</head>
+	<body>
+		<div id = "map"></div>
+		<div data-role = "page" id = "primariesList">
+			<div id = "PrimariesHeader"<center> Primaries </center></div>
+			<div id = "list">
+				<div id = "6date">Monday Feburary 1st </div>
+					<div id = "6state">Iowa Caucus</div>
+				<div id = "6date">Tuesday February 9th </div>
+					<div id = "6state"> New Hampshire Primaries </div>
+				<div id = "6date"> Saturday February 20th </div>
+					<div id = "6state"> Nevada Caucus (Democratic) <br>
+										South Carolina Primaries (Republican) <br>
+										Washington Caucus (Republican)
+					</div>
+				<div id = "6date"> Tuesday February 23rd </div>
+					<div id = "6state"> Nevada Caucus (Republican) </div>
+				<div id = "6date"> Tuesday Febraury 27th </div>
+					<div id = "6state">South Carolina (Democratic) </div>
+				<div id = "6date"> Tuesday March 1st (Super Tuesday) </div>
+					<div id = "6state"> Alabama <br>
+										Alaska Caucus (Republican) <br>
+										American Samoa Caucus (Democratic) <br>
+										Arkansas <br>
+										Colorado Caucus <br>
+										Georgia <br>
+										Massachusetts <br>
+										Minnesota Caucus <br>
+										North Dakota Caucus (Republican) <br>
+										Oklahoma <br>
+										Tennesse <br>
+										Texas <br>
+										Vermont <br>
+										Virginia <br>
+										Wyoming Caucus (Republican)
+					</div>
+				<div id = "6date"> Saturday March 5th </div>
+					<div id = "6state"> Kansas Caucus <br>
+										Kentucky Caucus (Republican) <br>
+										Louisiana <br>
+										Maine Caucus (Republican) <br>
+										Nebraska Caucus (Democratic) <br>
+					</div>
+				<div id = "6date"> Sunday March 6th </div>
+					<div id = "6state"> Maine Caucus (Democratic) <br>
+										Puerto Rico (Republican) <br>
+					</div>
+				<div id = "6date"> Tuesday March 8th </div>
+					<div id = "6state"> Hawaii Caucus (Republican) <br>
+										Idaho (Republican) <br>
+										Michigan <br>
+										Mississippi <br>
+										Democrats Abroad <br>
+					</div>
+				</div>
+				<div id = "6date"> Saturday March 12th </div>
+					<div id = "6state"> Guam (Republican Convention) <br>
+										Northern Marianas Caucus <br>
+										District of Columbia Caucus <br>
+					</div>
+				</div>
+				<div id= "6date"> Tuesday March 15 </div>
+					<div id = "6state"> Florida <br>
+										Illinois <br>
+										Missouri <br>
+										North Carolina <br>
+										Northern Mariana Islands Caucus (Republican) <br>
+										Ohio <br>
+					</div>
+				</div>
+				<div id = "6date"> Saturday March 19th </div>
+					<div id = "6state"> Virgin Islands Caucus (Republican) </div>
+				</div>
+				<div id = "6date"> Tuesday March 22nd </div>
+					<div id = "6state"> American Samoa (Republican Convention) <br>
+										Arizona <br>
+										Idaho Caucus (Democratic) <br>
+										Utah <br>
+					</div>
+				</div>
+				<div id = "6date"> Saturday March 26th </div>
+					<div id = "6state"> Alaska Caucus (Democratic) <br>
+										Hawaii Caucus (Democratic) <br>
+										Washington Caucus <br>
+					</div>
+				</div>
+				<div id = "6date"> Tuesday April 5th </div>
+					<div id = "6state"> Wisconsin </div>
+				</div>
+				<div id = "6date"> Saturday April 9th </div>
+					<div id = "6state"> Wyoming Caucus (Democratic) </div>
+				</div>
+				<div id = "6date"> Tuesday April 19th </div>
+					<div id = "6state"> New York </div>
+				<div id = "6date"> Tuesday April 26th </div>
+					<div id = "6state"> Connecticut <br>
+										Deleware <br>
+										Maryland <br>
+										Pennyslvania <br>
+										Rhode Island <br>
+					</div>
+				</div>
+				<div id = "6date"> Tuesday May 3rd </div>
+					<div id = "6state"> Indiana <br>
+										Guam (Democratic) <br>
+										Nebraska (Republican) <br>
+					</div>
+				</div>
+				<div id = "6date"> Saturday May 7th </div>
+
+			</div>
+		</div>
+
+
+	</body>
+	<input type="button" onclick="location.href='page3RegisteredToVote.html';" value="Return"/>
+</html>
